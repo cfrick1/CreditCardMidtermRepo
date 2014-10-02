@@ -31,13 +31,20 @@ public class CheckDigit {
 				evens += 2*num;
 		}
 		
+		boolean card = false;
 		int total = evens + odds;
 		if (total%10 ==0){
-			if ((int)number_chars[0]-48 ==4 || (int)number_chars[0]-48 ==5 || (int)number_chars[0]-48 ==6)
-				System.out.println("The number is valid");
-			else if ((int)number_chars[0]-48 ==3 && (int)number_chars[1]-48 ==7)
-				System.out.println("The number is valid");
+			if ((int)number_chars[0]-48 ==4 || (int)number_chars[0]-48 ==5 || (int)number_chars[0]-48 ==6){
+				card = true;
+			}
+			else if ((int)number_chars[0]-48 ==3 && (int)number_chars[1]-48 ==7){
+				card = true;
+			}
 		}
+		else
+			card = false;
+		if (card)
+			System.out.println("The number is valid");
 		else
 			System.out.println("The number is invalid");
 	}
